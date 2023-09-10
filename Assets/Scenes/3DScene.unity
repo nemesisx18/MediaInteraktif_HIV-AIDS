@@ -1891,5 +1891,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Virus
       objectReference: {fileID: 0}
+    - target: {fileID: 8695130991186579294, guid: 6b7b1e5e7754f7e4c9752a29cec2f858, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b7b1e5e7754f7e4c9752a29cec2f858, type: 3}

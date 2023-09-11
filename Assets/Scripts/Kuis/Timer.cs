@@ -27,6 +27,11 @@ public class Timer : MonoBehaviour
         RunTimer();
     }
 
+    public void AddTimer()
+    {
+        timeRemaining += 30f;
+    }
+
     public void StopTimer(int score)
     {
         timerIsRunning = false;

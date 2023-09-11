@@ -6462,7 +6462,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'c. Virus yang menyerang sistem kekebalan tubuh manusia *
+  m_text: 'c. Virus yang menyerang sistem kekebalan tubuh manusia
 
 '
   m_isRightToLeft: 0
@@ -13777,6 +13777,7 @@ GameObject:
   - component: {fileID: 1023159528}
   - component: {fileID: 1023159527}
   - component: {fileID: 1023159526}
+  - component: {fileID: 1023159529}
   m_Layer: 5
   m_Name: ClockTime
   m_TagString: Untagged
@@ -13886,6 +13887,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023159524}
   m_CullTransparentMesh: 1
+--- !u!114 &1023159529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023159524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e30937c75422d240b6a1381aa0eacfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <PowerupType>k__BackingField: 1
+  timer: {fileID: 1532149358}
+  quizManager: {fileID: 1532149357}
 --- !u!1 &1039501945
 GameObject:
   m_ObjectHideFlags: 0
@@ -17453,6 +17469,7 @@ GameObject:
   - component: {fileID: 1364523056}
   - component: {fileID: 1364523055}
   - component: {fileID: 1364523054}
+  - component: {fileID: 1364523057}
   m_Layer: 5
   m_Name: Powerup3
   m_TagString: Untagged
@@ -17562,6 +17579,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1364523052}
   m_CullTransparentMesh: 1
+--- !u!114 &1364523057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364523052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e30937c75422d240b6a1381aa0eacfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <PowerupType>k__BackingField: 2
+  timer: {fileID: 1532149358}
+  quizManager: {fileID: 1532149357}
 --- !u!1 &1370560217
 GameObject:
   m_ObjectHideFlags: 0
@@ -20692,6 +20724,7 @@ MonoBehaviour:
   - {fileID: 414975702}
   - {fileID: 1212576460}
   - {fileID: 1141348880}
+  _listSoalSalah: []
   _scoreResultPanel: {fileID: 2069452885}
   _finalScoreText: {fileID: 1511919570}
   _scoreSoal: 0
@@ -22611,6 +22644,7 @@ GameObject:
   - component: {fileID: 1668589884}
   - component: {fileID: 1668589883}
   - component: {fileID: 1668589882}
+  - component: {fileID: 1668589885}
   m_Layer: 5
   m_Name: TimeSand
   m_TagString: Untagged
@@ -22720,6 +22754,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668589880}
   m_CullTransparentMesh: 1
+--- !u!114 &1668589885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668589880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e30937c75422d240b6a1381aa0eacfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <PowerupType>k__BackingField: 0
+  timer: {fileID: 1532149358}
+  quizManager: {fileID: 1532149357}
 --- !u!1 &1672903921
 GameObject:
   m_ObjectHideFlags: 0

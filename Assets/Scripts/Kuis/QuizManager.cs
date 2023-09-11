@@ -7,6 +7,7 @@ public class QuizManager : MonoBehaviour
     [SerializeField] private Timer _timer;
 
     [SerializeField] private List<GameObject> _listSoal = new List<GameObject>();
+    [SerializeField] private List<GameObject> _listSoalSalah = new List<GameObject>();
 
     [SerializeField] private GameObject _scoreResultPanel;
 
@@ -17,6 +18,8 @@ public class QuizManager : MonoBehaviour
 
     [SerializeField] private int _soalSekarang = 0;
     [SerializeField] private int counterSoal = 0;
+
+    private bool usingPowerup = false;
 
     private void OnEnable()
     {
@@ -60,7 +63,24 @@ public class QuizManager : MonoBehaviour
     {
         _scoreSoal += score;
 
+        if(usingPowerup)
+        {
+            _listSoalSalah[_soalSekarang].SetActive(false);
+            _listSoalSalah.RemoveAt(_soalSekarang);
+
+            InitQuestion();
+
+            usingPowerup = false;
+            return;
+        }
+
         _listSoal[_soalSekarang].SetActive(false);
+
+        if(score == 0)
+        {
+            _listSoalSalah.Add(_listSoal[_soalSekarang]);
+        }
+
         _listSoal.RemoveAt(_soalSekarang);
 
         if (counterSoal == targetSoal)
@@ -77,6 +97,24 @@ public class QuizManager : MonoBehaviour
         _listSoal[_soalSekarang].SetActive(true);
 
         counterSoal++;
+    }
+
+    public void SkipQuiz()
+    {
+        RandomQuestion(10);
+    }
+
+    public void ReanswerQuiz()
+    {
+        _listSoal[_soalSekarang].SetActive(false);
+
+        int randomIndex = Random.Range(0, _listSoalSalah.Count);
+
+        _soalSekarang = randomIndex;
+
+        usingPowerup = true;
+
+        _listSoalSalah[randomIndex].SetActive(true);
     }
 
     //private void NextQuestion(int score)

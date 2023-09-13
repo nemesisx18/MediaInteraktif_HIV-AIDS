@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class MainMenuUIScene : MonoBehaviour
@@ -8,4 +9,6 @@ public class MainMenuUIScene : MonoBehaviour
     {
         Application.OpenURL("https://api.whatsapp.com/send?text=" + downloadGameLink);
     }
+
+    
 }

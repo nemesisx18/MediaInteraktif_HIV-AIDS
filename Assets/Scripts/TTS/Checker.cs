@@ -1,9 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Timeline;
 
 public class Checker : MonoBehaviour
 {
     [SerializeField] private List<GameObject> gameObjects = new List<GameObject>();
+
+    [SerializeField] private GameObject markerLine;
 
     [SerializeField] private string Text;
 
@@ -30,6 +33,7 @@ public class Checker : MonoBehaviour
         if (isDone && !isFinished)
         {
             OnConditionFullfiled?.Invoke(Text);
+            markerLine.SetActive(true);
             isFinished = true;
         }
     }

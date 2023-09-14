@@ -24,6 +24,7 @@ public class GameAudioManager : MonoBehaviour
 
     public AudioSource BgmSource => _bgmSource;
     public AudioSource SfxSource => _sfxSource;
+    public AudioSource BgmSoalSource => _bgmSoalSource;
 
     private bool isSoalMode = false;
 

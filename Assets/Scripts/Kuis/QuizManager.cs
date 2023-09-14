@@ -19,6 +19,11 @@ public class QuizManager : MonoBehaviour
     [SerializeField] private int _soalSekarang = 0;
     [SerializeField] private int counterSoal = 0;
 
+    [Header("Result Panel")]
+    [SerializeField] private GameObject star_1;
+    [SerializeField] private GameObject star_2;
+    [SerializeField] private GameObject star_3;
+
     private bool usingPowerup = false;
 
     private void OnEnable()
@@ -48,6 +53,48 @@ public class QuizManager : MonoBehaviour
     private void Update()
     {
         _finalScoreText.text = "Selamat " + SaveData.SaveInstance.CurrentUsername + " anda mendapat nilai " + _scoreSoal.ToString();
+
+        switch(_scoreSoal)
+        {
+            case 100:
+                star_1.SetActive(true);
+                star_2.SetActive(true);
+                star_3.SetActive(true);
+                break;
+            case 90:
+                star_1.SetActive(true);
+                star_2.SetActive(true);
+                star_3.SetActive(true);
+                break;
+            case 80:
+                star_1.SetActive(true);
+                star_2.SetActive(true);
+                break;
+            case 70:
+                star_1.SetActive(true);
+                star_2.SetActive(true);
+                break;
+            case 60:
+                star_1.SetActive(true);
+                break;
+            case 50:
+                star_1.SetActive(true);
+                break;
+            case 40:
+                star_1.SetActive(true);
+                break;
+            case 30:
+                star_1.SetActive(true);
+                break;
+            case 20:
+                star_1.SetActive(true);
+                break;
+            case 10:
+                star_1.SetActive(true);
+                break;
+            case 0:
+                break;
+        }
     }
 
     private void InitQuestion()
@@ -142,6 +189,8 @@ public class QuizManager : MonoBehaviour
         GameAudioManager.audioInstance.PlayMenuBGM();
 
         _scoreResultPanel.SetActive(true);
+
+        GameAudioManager.audioInstance.BgmSoalSource.mute = true;
     }
 
     public void EndSession()

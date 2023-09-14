@@ -21,6 +21,8 @@ public class MainMenuUIScene : MonoBehaviour
 
     private void Start()
     {
+        GameAudioManager.audioInstance.PlayMenuBGM();
+
         StartCoroutine(AnnoucerCooldown(17.5f));
         
         for (int i = 0; i < everyButtons.Length; i++)

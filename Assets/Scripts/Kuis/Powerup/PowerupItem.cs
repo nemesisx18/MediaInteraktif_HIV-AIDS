@@ -26,6 +26,8 @@ public class PowerupItem : MonoBehaviour
 
     public void OnPowerupUsage()
     {
+        GameAudioManager.audioInstance.OnSoalHelp();
+        
         switch (PowerupType)
         {
             case Powerup.SkipQuiz:

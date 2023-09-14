@@ -39,6 +39,8 @@ public class SoalKuis : MonoBehaviour
             _jawabC.GetComponent<Image>().color = Color.red;
             _jawabD.GetComponent<Image>().color = Color.red;
 
+            GameAudioManager.audioInstance.OnCorrectAnswer();
+
             StartCoroutine(LoadQuestion(10));
         }
         else
@@ -69,6 +71,8 @@ public class SoalKuis : MonoBehaviour
             }
             _jawabA.GetComponent<Image>().color = Color.red;
 
+            GameAudioManager.audioInstance.OnWrongAnswer();
+
             StartCoroutine(LoadQuestion(0));
         }
     }
@@ -81,6 +85,8 @@ public class SoalKuis : MonoBehaviour
             _jawabB.GetComponent<Image>().color = Color.green;
             _jawabC.GetComponent<Image>().color = Color.red;
             _jawabD.GetComponent<Image>().color = Color.red;
+
+            GameAudioManager.audioInstance.OnCorrectAnswer();
 
             StartCoroutine(LoadQuestion(10));
         }
@@ -111,6 +117,8 @@ public class SoalKuis : MonoBehaviour
                 _jawabD.GetComponent<Image>().color = Color.red;
             }
             _jawabB.GetComponent<Image>().color = Color.red;
+
+            GameAudioManager.audioInstance.OnWrongAnswer();
 
             StartCoroutine(LoadQuestion(0));
         }
@@ -125,6 +133,8 @@ public class SoalKuis : MonoBehaviour
             _jawabC.GetComponent<Image>().color = Color.green;
             _jawabD.GetComponent<Image>().color = Color.red;
 
+            GameAudioManager.audioInstance.OnCorrectAnswer();
+
             StartCoroutine(LoadQuestion(10));
         }
         else
@@ -155,6 +165,8 @@ public class SoalKuis : MonoBehaviour
             }
             _jawabC.GetComponent<Image>().color = Color.red;
 
+            GameAudioManager.audioInstance.OnWrongAnswer();
+
             StartCoroutine(LoadQuestion(0));
         }
     }
@@ -167,6 +179,8 @@ public class SoalKuis : MonoBehaviour
             _jawabB.GetComponent<Image>().color = Color.red;
             _jawabC.GetComponent<Image>().color = Color.red;
             _jawabD.GetComponent<Image>().color = Color.green;
+
+            GameAudioManager.audioInstance.OnCorrectAnswer();
 
             StartCoroutine(LoadQuestion(10));
         }
@@ -197,6 +211,8 @@ public class SoalKuis : MonoBehaviour
                 _jawabC.GetComponent<Image>().color = Color.red;
             }
             _jawabD.GetComponent<Image>().color = Color.red;
+
+            GameAudioManager.audioInstance.OnWrongAnswer();
 
             StartCoroutine(LoadQuestion(0));
         }

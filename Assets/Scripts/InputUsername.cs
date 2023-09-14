@@ -12,6 +12,8 @@ public class InputUsername : MonoBehaviour
 
     private void Start()
     {
+        GameAudioManager.audioInstance.PauseMusic();
+        
         if(SaveData.SaveInstance.CurrentUsername != "")
         {
             NextScene.SetActive(true);
@@ -23,6 +25,8 @@ public class InputUsername : MonoBehaviour
     {
         SaveName(UserInputField.text);
         UserInputField.enabled = false;
+
+        GameAudioManager.audioInstance.UnpauseMusic();
     }
 
     public void SaveName(string newName)

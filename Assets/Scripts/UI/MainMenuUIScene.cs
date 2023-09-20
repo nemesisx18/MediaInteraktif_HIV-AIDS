@@ -17,14 +17,12 @@ public class MainMenuUIScene : MonoBehaviour
     [SerializeField] private GameObject sfxChecker;
     [SerializeField] private GameObject notifChecker;
 
+    [SerializeField] private AudioSource bgmSource;
+
     private bool isNotif = false;
 
     private void Start()
     {
-        GameAudioManager.audioInstance.PlayMenuBGM();
-
-        StartCoroutine(AnnoucerCooldown(17.5f));
-        
         for (int i = 0; i < everyButtons.Length; i++)
         {
             everyButtons[i].onClick.AddListener(GameAudioManager.audioInstance.OnButtonClip);
@@ -39,16 +37,9 @@ public class MainMenuUIScene : MonoBehaviour
         notifChecker.SetActive(isNotif);
     }
 
-    public void StopAudioFor(float timer)
+    private void Update()
     {
-        StartCoroutine(AnnoucerCooldown(timer));
-    }
-
-    private IEnumerator AnnoucerCooldown(float timer)
-    {
-        GameAudioManager.audioInstance.PauseMusic();
-        yield return new WaitForSeconds(timer);
-        GameAudioManager.audioInstance.UnpauseMusic();
+        bgmSource.mute = !ConfigData.configInstance.isBgmOn;
     }
 
     public void ShareToWhatsapp()

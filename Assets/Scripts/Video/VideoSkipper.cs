@@ -19,12 +19,9 @@ public class VideoSkipper : MonoBehaviour
 
     public IEnumerator CountdownVideo()
     {
-        skipBtn = GetComponent<Button>();
         skipBtn.onClick.AddListener(OnSkipVideo);
         
         mainCanvas.SetActive(false);
-        GameAudioManager.audioInstance.BgmSource.Pause();
-        GameAudioManager.audioInstance.SfxSource.Pause();
 
         yield return new WaitForSeconds(videoDuration + 0.5f);
         SkipVideo();
@@ -40,10 +37,5 @@ public class VideoSkipper : MonoBehaviour
     {
         gameObject.SetActive(false);
         mainCanvas.SetActive(true);
-
-        mainCanvas.GetComponent<MainMenuUIScene>().StopAudioFor(narationDuration);
-
-        GameAudioManager.audioInstance.BgmSource.Play();
-        GameAudioManager.audioInstance.SfxSource.Play();
     }
 }

@@ -9,8 +9,12 @@ public class LoadingUI : MonoBehaviour
 
     [SerializeField] private GameObject nextPanel;
 
+    [SerializeField] private AudioSource bgmSource;
+
     private void Update()
     {
+        bgmSource.mute = !ConfigData.configInstance.isBgmOn;
+
         loadingBar.value = Time.time;
 
         if(loadingBar.value == loadingBar.maxValue)

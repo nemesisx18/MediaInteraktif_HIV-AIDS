@@ -45,8 +45,6 @@ public class QuizManager : MonoBehaviour
 
     private void Start()
     {
-        GameAudioManager.audioInstance.ToggleSoalBool();
-        
         InitQuestion();
     }
 
@@ -186,11 +184,7 @@ public class QuizManager : MonoBehaviour
 
     private void SwitchPanel()
     {
-        GameAudioManager.audioInstance.PlayMenuBGM();
-
         _scoreResultPanel.SetActive(true);
-
-        GameAudioManager.audioInstance.BgmSoalSource.mute = true;
     }
 
     public void EndSession()

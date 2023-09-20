@@ -7,10 +7,6 @@ public class GameAudioManager : MonoBehaviour
 {
     public static GameAudioManager audioInstance;
 
-    //[SerializeField] private ConfigData _configData;
-
-    [SerializeField] private AudioSource _bgmSource;
-    [SerializeField] private AudioSource _bgmSoalSource;
     [SerializeField] private AudioSource _sfxSource;
 
     [SerializeField] private AudioClip menuBGM;
@@ -22,11 +18,7 @@ public class GameAudioManager : MonoBehaviour
     [SerializeField] private AudioClip correctClip;
     [SerializeField] private AudioClip wrongClip;
 
-    public AudioSource BgmSource => _bgmSource;
     public AudioSource SfxSource => _sfxSource;
-    public AudioSource BgmSoalSource => _bgmSoalSource;
-
-    private bool isSoalMode = false;
 
     private void Awake()
     {
@@ -44,39 +36,7 @@ public class GameAudioManager : MonoBehaviour
 
     private void Update()
     {
-        _bgmSource.mute = !ConfigData.configInstance.isBgmOn;
         _sfxSource.mute = !ConfigData.configInstance.isSfxOn;
-    }
-
-    public void PauseMusic()
-    {
-        _bgmSource.Pause();
-        _bgmSoalSource.Pause();
-    }
-
-    public void UnpauseMusic()
-    {
-        _bgmSource.Play();
-        _bgmSoalSource.Play();
-    }
-
-    public void PlayMenuBGM()
-    {
-        _bgmSource.clip = menuBGM;
-        _bgmSource.Play();
-        _bgmSoalSource.Stop();
-    }
-
-    public void PlaySoalBGM()
-    {
-        _bgmSoalSource.clip = soalBGM;
-        _bgmSoalSource.Play();
-        _bgmSource.Stop();
-    }
-
-    public void ToggleSoalBool()
-    {
-        isSoalMode = !isSoalMode;
     }
 
     public void PlaySfx(AudioClip clip)

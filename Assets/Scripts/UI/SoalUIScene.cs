@@ -7,7 +7,7 @@ public class SoalUIScene : MonoBehaviour
 {
     [SerializeField] private Button[] jawabButton;
 
-    [SerializeField] private Button homeButton;
+    [SerializeField] private AudioSource bgmSource;
 
     private void Start()
     {
@@ -16,9 +16,11 @@ public class SoalUIScene : MonoBehaviour
             jawabButton[i].onClick.AddListener(GameAudioManager.audioInstance.OnButtonClip);
         }
 
-        homeButton.onClick.AddListener(GameAudioManager.audioInstance.PlayMenuBGM);
-
-        GameAudioManager.audioInstance.PlaySoalBGM();
         GameAudioManager.audioInstance.OnStartCountdown();
+    }
+
+    private void Update()
+    {
+        bgmSource.mute = !ConfigData.configInstance.isBgmOn;
     }
 }
